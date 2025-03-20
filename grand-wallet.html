@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUANTOVA-Grand Wallet</title>
+    <!-- Favicon icon -->
+    <link rel="icon" href="./image/Group.ico" type="img/png" class="" />
+
+    <!-- Font awsome icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Inter Font family -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- funnel display font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- tailwind css CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind css link -->
+    <script>
+      /** @type {import('tailwindcss').Config} */
+      module.exports = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              funnel_display: ["Funnel Display", "sans-serif"],
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <!-- /* min-h-screen flex flex-col */ -->
+  <body class="bg-black fontFamily-inter text-white">
+    <header class="my-6">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex items-center justify-between px-6 py-4 rounded-full p-1 border-2 border-[#1E1E1E]"
+        >
+          <div class="flex items-center space-x-2">
+            <img src="image/logo.png" alt="Quantova Logo" class="w-8 h-8" />
+            <span class="text-xl font-bold">QUANTOVA</span>
+          </div>
+          <nav
+            class="hidden md:flex space-x-6 font-medium text-[17px] tracking-wide"
+          >
+            <a href="#" class="hover:text-gray-400">Learn</a>
+            <a href="#" class="hover:text-gray-400">Build</a>
+            <a href="#" class="hover:text-gray-400">Use</a>
+            <a href="#" class="hover:text-gray-400">Network</a>
+            <a href="#" class="hover:text-gray-400">Community</a>
+          </nav>
+          <!-- Search & Hamburger -->
+          <div class="flex items-center">
+            <!-- Search (hidden on small screens) -->
+            <div
+              class="hidden md:flex items-center space-x-4 rounded-lg border border-white text-xl px-3 py-2"
+            >
+              <input
+                type="text"
+                placeholder="Search"
+                class="rounded-xl bg-transparent placeholder:text-white placeholder:text-[18px] focus:outline-none"
+              />
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5A7 7 0 1110 4a7 7 0 017 7z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button
+              class="md:hidden flex gap-2 items-center"
+              @click="open = !open"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5A7 7 0 1110 4a7 7 0 017 7z"
+                />
+              </svg>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  x-show="!open"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- community -->
+    <section class="my-16 py-3">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="lg:flex justify-center items-center mb-6 lg:mb-0">
+          <div
+            class="lg:w-3/5 w-full flex flex-col items-start justify-start space-y-10 lg:text-left text-center mb-6"
+          >
+            <div class="lg:text-left text-center flex flex-col">
+              <p class="uppercase font-normal">QUANTOVA WALLETs</p>
+              <h2
+                class="uppercase text-[36px] lg:text-[60px] font-bold leading-tight"
+              >
+                Holding the keys to <br />
+                your digital future
+              </h2>
+            </div>
+            <div>
+              <p
+                class="text-[18px] lg:text-[24px] text-[#CDCDCD] leading-tight mb-3"
+              >
+                Wallets help you access your digital assets and sign in to
+                applications.
+              </p>
+            </div>
+            <div class="lg:flex gap-2 justify-around items-start">
+              <button
+                class="bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-300 transition mb-3"
+              >
+                FIND A WALLET
+              </button>
+              <button
+                class="border border-white px-10 py-3 rounded hover:bg-white hover:text-black transition duration-700 font-semibold mb-3"
+              >
+                HOW TO USE WALLETS
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:w-2/5 w-full p-2">
+            <img src="image/wallet.png" alt="" class="lg:w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unloack  -->
+
+    <section class="py-2 my-10">
+      <div class="max-w-4xl mx-auto px-4">
+        <div
+          class="flex flex-col items-center justify-center drop-shadow-xl border border-[#1E1E1E] rounded-lg p-6 shadow-xl"
+        >
+          <h2 class="mb-4 text-[22px] lg:text-[42px] font-bold text-center">
+            Unlock Programmable Money
+          </h2>
+          <p class="leading-tight lg:text-[20px]  text-[16px]  text-[#CDCDCD] text-center">
+            Wallets built on Quantova don’t just safeguard your assets—they
+            unleash <br class="hidden lg:block"> full programmability. Automate an open-ended array of
+            advanced wallet <br class="hidden lg:block"> functionalities, including subscription services,
+            KYC rules, loyalty <br class="hidden lg:block"> programs, and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUANTOVA Wallet  -->
+    <section class="my-14">
+          <div class="max-w-6xl px-4  mx-auto">
+        
+            <div class="px-12 bg-black drop-shadow-xl border border-[#1E1E1E] rounded-lg p-6 shadow-xl p-10 ">
+                        <!-- Header -->
+            <h2 class="text-2xl md:text-4xl font-bold mb-4">WHAT'S AN QUANTOVA WALLET?</h2>
+        
+            <!-- Description -->
+            <div class="grid md:grid-cols-2 gap-8 my-8">
+              <p class=" text-gray-300 leading-relaxed">
+                Quantova wallets are applications that give you control over your account. Just like your physical wallet, it contains everything you need to prove your identity and handle your assets. Your wallet allows you to sign in to applications, read your balance, send transactions and verify your identity.
+                <br><br>
+                Wallets are what most people use to handle their digital assets and identity.
+              </p>
+              <p class="text-gray-300 leading-relaxed">
+                Your wallet is a tool for interacting with your Quantova account. That means you can swap wallet providers at any time. Many wallets also let you manage several Quantova accounts from one application.
+                <br><br>
+                Wallet providers don’t have custody of your funds. They just provide you a window to see your assets on Quantova and tools to easily manage them.
+              </p>
+            </div>
+        
+            <!-- Buttons -->
+            <div class="space-y-4 mb-12">
+               <table></table>
+            </div>
+        
+            <!-- 3 Cards Section -->
+            <div class="grid md:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="border border-gray-700 rounded-lg p-6 text-center hover:border-white transition">
+                <div class="text-4xl mb-4">💵</div>
+                <h3 class="font-bold text-lg mb-2">AN APP FOR MANAGING YOUR FUNDS</h3>
+                <p class="text-gray-400">Your wallet shows your balances, transaction history and gives you a way to send/receive funds. Some wallets may offer more.</p>
+              </div>
+        
+              <!-- Card 2 -->
+              <div class="border border-gray-700 rounded-lg p-6 text-center hover:border-white transition">
+                <div class="text-4xl mb-4">📄</div>
+                <h3 class="font-bold text-lg mb-2">YOUR QUANTOVA ACCOUNT</h3>
+                <p class="text-gray-400">Your wallet is your window into your Quantova account – your balance, transaction history and more. But you can swap wallet providers at any time.</p>
+              </div>
+        
+              <!-- Card 3 -->
+              <div class="border border-gray-700 rounded-lg p-6 text-center hover:border-white transition">
+                <div class="text-4xl mb-4">👤</div>
+                <h3 class="font-bold text-lg mb-2">YOUR LOGIN FOR QUANTOVA APPS</h3>
+                <p class="text-gray-400">Your wallet lets you connect to applications using your Quantova account. It's like a login you can use across many apps.</p>
+              </div>
+            </div>
+            </div>
+        
+          </div>
+        </section>
+        
+  </body>
+</html>
